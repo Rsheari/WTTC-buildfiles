@@ -1,0 +1,18 @@
+#define constant 0x64
+//The whole gimmick of the hack
+//100 crit
+PUSH
+ORG $2ACA2
+BYTE constant
+POP
+// 100 hit
+PUSH
+ORG $2AC84
+BYTE constant
+ORG $2AC88
+BYTE constant
+ORG $2A78
+BYTE constant
+ORG $2AC7C
+BYTE constant
+POP
