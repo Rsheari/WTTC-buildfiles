@@ -182,6 +182,9 @@ POP
   #ifdef CRIT_CAP
     #include "ExternalHacks/CritCap/CritCap.event"
   #endif
+  
+// Stuff
+  #include "ExternalHacks/Stuff/Stuff.event"
 
   //Item Effect Revamp by Teraspark
   #include "Necessary/ItemEffectRevamp/IERevamp_Installer.event"
@@ -190,7 +193,7 @@ POP
   #include "Necessary/DurabilityBasedItems/DurabilityBasedItems.event"
   
   //Generic routines that other things may rely on 
-  #include "Necessary/Routines/Installer.event" 
+  #include "Necessary/Routines/Installer.event"
 
 
   
