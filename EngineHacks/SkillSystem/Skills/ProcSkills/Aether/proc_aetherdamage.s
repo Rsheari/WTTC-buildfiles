@@ -43,12 +43,15 @@ cmp r0, #0
 beq End
 @if user has Aether, check for proc rate
 
-ldrb r0, [r4, #0x15] @skill/2 stat as activation rate
-lsr r0, #1
-mov r1, r4 @skill user
+ldrb r0, [r4, #0x15]
+mov r1, #100
+add r0, r1, r0
+ldrb r1, [r5, #0x19]
+lsl r1, r1, #2
+sub r0, r0, r1
 blh d100Result
-cmp r0, #1
-bne End
+cmp r0, #0
+beq End
 
 @if we proc, set the brave effect flag for the NEXT hit
 ldrb r1, AetherID @first mark Aether active

@@ -32,12 +32,16 @@ cmp r0, #0
 beq End
 @if user has sure shot, check for proc rate
 
-ldrb r0, [r4, #0x15] @skill stat as activation rate
-lsr r0,r0,#1 @/2
-mov r1, r4 @skill user
+ldrb r0, [r4, #0x15]
+mov r1, #100
+add r0, r1, r0
+ldrb r1, [r5, #0x19]
+lsl r1, r1, #2
+sub r0, r0, r1
 blh d100Result
-cmp r0, #1
-bne End
+cmp r0, #0
+beq End
+
 
 @if we proc, set the offensive skill flag
 ldr     r2,[r6]    
@@ -56,24 +60,10 @@ strb  r0, [r6,#4]
 
 @subtract user's level from opponent's weapon uses after battle
 
-mov r0,r4
-add r0,#0x08
-ldrb r3,[r0]
 mov r0,r5
 add r0,#0x48
-ldrh r1,[r0]
-mov r2,r0
-lsr r0,r1,#8
-sub r0,r3
-cmp r0,#0
-bgt DidntHitMinimum
-mov r0,#0
-DidntHitMinimum:
-lsl r0,r0,#8
-lsl r1,r1,#24
-lsr r1,r1,#24
-orr r0,r1
-strh r0,[r2]
+ldrb r1,[r0]
+strh r1,[r0]
 
 End:
 pop {r4-r7}
