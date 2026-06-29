@@ -86,7 +86,11 @@ POP
   //Proper Range Getters
   #include "ExternalHacks/ProperRangeGetters/ProperRangeGetters/ProperRangeGetters.event"
 
-
+  //Leadership Stars
+  #include "ExternalHacks/LeadershipStars/LeadershipStars.event"
+  
+  //Biorhythm
+  #include "ExternalHacks/Biorhythm/Biorhythm.event"
 
   //Modular Stat Screen
   #include "Necessary/ModularStatScreen/ModularStatScreen.event"
@@ -195,7 +199,8 @@ POP
   //Generic routines that other things may rely on 
   #include "Necessary/Routines/Installer.event"
 
-
+  // Gaiden Magic 2.0
+  #include "ExternalHacks/GaidenMagic/GaidenMagic.event"
   
   #ifdef INSTALL_AoE
 	#include "ExternalHacks/AoE/Installer.event"
