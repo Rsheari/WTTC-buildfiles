@@ -1,5 +1,5 @@
 #define constant 0x64
-//The whole gimmick of the hack, all in one file
+//The whole gimmick of the hack
 //100 crit
 PUSH
 ORG $2ACA2
