@@ -271,11 +271,11 @@ s8 NewBattleGetFollowUpOrder(struct BattleUnit** outAttacker, struct BattleUnit*
 
 
 int CanUnitDouble(struct BattleUnit* bunitA, struct BattleUnit* bunitB) { 
-	int threshold = DoublingThresholdLink; 
+//	int threshold = DoublingThresholdLink; 
 	int result = true; 
-	if ((bunitA->battleSpeed - threshold) < bunitB->battleSpeed) {
-	result = false; } 
-
+    if ((bunitA->battleSpeed / 2) < bunitB->battleSpeed) {
+    result = false; } 
+	// by ditto, double speed
     if (GetItemWeaponEffect(bunitA->weaponBefore) == WPN_EFFECT_HPHALVE)
         return false;
 
