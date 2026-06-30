@@ -188,7 +188,27 @@ POP
   #endif
   
 // Stuff
+ALIGN 4
   #include "ExternalHacks/Stuff/Stuff.event"
+
+// GoldenSunTalkBeeps
+ALIGN 4
+#include "ExternalHacks/GoldenSunTalkBeeps/Installer.event"
+// AnimFastFoward
+ALIGN 4
+#include "QualityOfLife/AnimsFastForward/Installer.event"
+// DangerBone
+ALIGN 4
+#include "QualityOfLife/DangerBones/Installer.event"
+// AutoRefreshingWeapons
+ALIGN 4
+#include "ExternalHacks/AutoRefreshingWeapons/AutoRefreshingWeapons.event"
+// MinimugPalette
+ALIGN 4
+#include "ExternalHacks/MinimugPalette/MinimugPalette.event"
+//UpdatedLButtonCycling
+ALIGN 4
+#include "QualityOfLife/UpdatedLButtonCycling/UpdatedLButtonCycling.event"
 
   //Item Effect Revamp by Teraspark
   #include "Necessary/ItemEffectRevamp/IERevamp_Installer.event"
@@ -220,6 +240,7 @@ POP
   
   ALIGN 4
   #include "Necessary/StatGetters/_InstallStatGetters.event"
+  
   
   //Growth Getters
   #include "Necessary/GrowthGetters/GrowthGetters.event"
