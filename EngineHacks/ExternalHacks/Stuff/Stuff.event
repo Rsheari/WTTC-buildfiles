@@ -1,12 +1,9 @@
 #define constant 0x64
-//The whole gimmick of the hack
-//100 crit
-PUSH
-ORG $2ACA2
-BYTE 0x64
-POP
+//The whole gimmick of the hack, in 1 file
 // 100 hit
 PUSH
+ORG $2ACA2
+BYTE constant
 ORG $2AC84
 BYTE constant
 ORG $2AC88

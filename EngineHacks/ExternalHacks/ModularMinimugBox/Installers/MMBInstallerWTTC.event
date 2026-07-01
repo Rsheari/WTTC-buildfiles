@@ -622,7 +622,7 @@ After each set of module options are definitions that you can use to adjust the 
 
 	// AS Number
 	#define MMBASX 128
-	#define MMBASY 56
+	#define MMBASY 32
 
 	// ATK Number
 	#define MMBATKX 128
@@ -642,7 +642,7 @@ After each set of module options are definitions that you can use to adjust the 
 
 	// DEF Number
 	#define MMBDEFX 128
-	#define MMBDEFY 24
+	#define MMBDEFY 16
 
 	// DOD Number
 	#define MMBDODX 128
@@ -662,7 +662,7 @@ After each set of module options are definitions that you can use to adjust the 
 
 	// RES number
 	#define MMBRESX 128
-	#define MMBRESY 40
+	#define MMBRESY 24
 
 	// RTG number
 	#define MMBRTGX 103
@@ -703,7 +703,7 @@ After each set of module options are definitions that you can use to adjust the 
 
 	// AS label
 	#define MMBASLabelX 13
-	#define MMBASLabelY 7
+	#define MMBASLabelY 4
 	#define MMBASLabelVRAMTile 0x100
 	#define MMBASLabelPaletteIndex 2
 	#define MMBASLabelTileCount 2
@@ -738,7 +738,7 @@ After each set of module options are definitions that you can use to adjust the 
 
 	// DEF label
 	#define MMBDEFLabelX 13
-	#define MMBDEFLabelY 3
+	#define MMBDEFLabelY 2
 	#define MMBDEFLabelVRAMTile 0x10A
 	#define MMBDEFLabelPaletteIndex 2
 	#define MMBDEFLabelTileCount 2
@@ -773,7 +773,7 @@ After each set of module options are definitions that you can use to adjust the 
 
 	// RES label
 	#define MMBRESLabelX 13
-	#define MMBRESLabelY 5
+	#define MMBRESLabelY 3
 	#define MMBRESLabelVRAMTile 0x164
 	#define MMBRESLabelPaletteIndex 2
 	#define MMBRESLabelTileCount 2
