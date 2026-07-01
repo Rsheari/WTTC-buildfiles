@@ -209,7 +209,9 @@ ALIGN 4
 //UpdatedLButtonCycling
 ALIGN 4
 #include "QualityOfLife/UpdatedLButtonCycling/UpdatedLButtonCycling.event"
-
+// MMB
+ALIGN 4
+#include "ExternalHacks/ModularMinimugBox/Installers/MMBInstallerWTTC.event"
   //Item Effect Revamp by Teraspark
   #include "Necessary/ItemEffectRevamp/IERevamp_Installer.event"
   

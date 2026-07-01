@@ -16,14 +16,3 @@ BYTE constant
 ORG $2AC7C
 BYTE constant
 POP
-// other shorthacks that cant use installer
-// disable link arena
-PUSH
-ORG $0AB90E
-SHORT $20000000
-POP
-// prep sell 1x
-PUSH
-ORG $0B5237
-SHORT $E0
-POP
