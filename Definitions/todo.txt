@@ -1,0 +1,6 @@
+// Skill system
+100% rate
+store ewram or something in mmb, each battle/staff/refresh the unit done accumulates value 1 with 
+formula of skill, caps at 200 
+other value 2, is set constant by Luck*2
+if value 1 > value 2, reduce value 1 by first value 2 then cost of skill, floor is 0, then proc said skill

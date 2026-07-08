@@ -1,5 +1,4 @@
-#include "gbafe.h" 
-#include <stdlib.h> 
+#include "C_Code.h"
 // see https://github.com/FireEmblemUniverse/fireemblem8u/blob/f3fc2db675198eba47b075e3a94a6284f576df90/src/bmbattle.c#L825
 
 extern int DoublingThresholdLink; 
@@ -9,7 +8,7 @@ extern s8 BattleGenerateRoundHits(struct BattleUnit* attacker, struct BattleUnit
 extern void BattleGetBattleUnitOrder(struct BattleUnit** outAttacker, struct BattleUnit** outDefender);
 extern void ClearBattleHits(void); 
 extern void BattleForecastHitCountUpdate(struct BattleUnit* battleUnit, u8* hitsCounter, int* usesCounter); 
-extern int IsUnitEffectiveAgainst(struct BattleUnit* attacker, struct BattleUnit* defender);
+
 extern s8 BattleGetFollowUpOrder(struct BattleUnit** outAttacker, struct BattleUnit** outDefender);
 
 
@@ -271,11 +270,11 @@ s8 NewBattleGetFollowUpOrder(struct BattleUnit** outAttacker, struct BattleUnit*
 
 
 int CanUnitDouble(struct BattleUnit* bunitA, struct BattleUnit* bunitB) { 
-//	int threshold = DoublingThresholdLink; 
+	int threshold = DoublingThresholdLink; 
 	int result = true; 
-    if ((bunitA->battleSpeed / 2) < bunitB->battleSpeed) {
-    result = false; } 
-	// by ditto, double speed
+	if ((bunitA->battleSpeed / threshold) < bunitB->battleSpeed) {
+	result = false; } 
+
     if (GetItemWeaponEffect(bunitA->weaponBefore) == WPN_EFFECT_HPHALVE)
         return false;
 
@@ -307,25 +306,6 @@ int IsAttackerWeaponUnableToDouble(struct BattleUnit* bunitA) {
 
 
 
-struct BattleForecastProc {
-    /* 00 */ PROC_HEADER;
-
-    /* 2C */ int unk_2C;
-    /* 30 */ s8 x;
-    /* 31 */ s8 y;
-    /* 32 */ u8 frameKind;
-    /* 33 */ s8 ready;
-    /* 34 */ s8 needContentUpdate;
-    /* 35 */ s8 side; // -1 is left, +1 is right
-    /* 36 */ s8 unk_36;
-    /* 38 */ struct TextHandle unitNameTextA;
-    /* 40 */ struct TextHandle unitNameTextB;
-    /* 48 */ struct TextHandle itemNameText;
-    /* 50 */ s8 hitCountA;
-    /* 51 */ s8 hitCountB;
-    /* 52 */ s8 isEffectiveA;
-    /* 53 */ s8 isEffectiveB;
-};
 void NewInitBattleForecastBattleStats(struct BattleForecastProc* proc); 
 
 void NewInitBattleForecastBattleStats(struct BattleForecastProc* proc) {
@@ -348,9 +328,6 @@ void NewInitBattleForecastBattleStats(struct BattleForecastProc* proc) {
             BattleForecastHitCountUpdate(buFirst, (u8*)&proc->hitCountA, &usesA);
         }
 
-        if (IsUnitEffectiveAgainst((struct BattleUnit*)&gBattleActor.unit, (struct BattleUnit*)&gBattleTarget.unit) != 0) {
-            proc->isEffectiveA = 1;
-        }
 
         if (IsItemEffectiveAgainst(gBattleActor.weaponBefore, &gBattleTarget.unit) != 0) {
             proc->isEffectiveA = 1;
@@ -371,10 +348,6 @@ void NewInitBattleForecastBattleStats(struct BattleForecastProc* proc) {
         }
         if ((followUp == BothFollowUp)) { // added 
             BattleForecastHitCountUpdate(buSecond, (u8*)&proc->hitCountB, &usesB);
-        }
-
-        if (IsUnitEffectiveAgainst((struct BattleUnit*)&gBattleTarget.unit, (struct BattleUnit*)&gBattleActor.unit) != 0) {
-            proc->isEffectiveB = 1;
         }
 
         if (IsItemEffectiveAgainst(gBattleTarget.weaponBefore, &gBattleActor.unit) != 0) {

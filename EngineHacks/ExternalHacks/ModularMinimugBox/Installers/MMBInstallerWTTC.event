@@ -609,7 +609,7 @@ After each set of module options are definitions that you can use to adjust the 
 	#define MMBRESNumber
 	//#define MMBRTGNumber
 	#define MMBCurrentHPNumber
-	#define MMBMaxHPNumber
+	//#define MMBMaxHPNumber
 		/*
 		 * Draws the number for the specified stat
 		 * to [MMB(STAT)X, MMB(STAT)Y].

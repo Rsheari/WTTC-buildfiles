@@ -186,10 +186,6 @@ POP
   #ifdef CRIT_CAP
     #include "ExternalHacks/CritCap/CritCap.event"
   #endif
-  
-// Stuff
-ALIGN 4
-  #include "ExternalHacks/Stuff/Stuff.event"
 
 // GoldenSunTalkBeeps
 ALIGN 4
@@ -258,4 +254,8 @@ ALIGN 4
 
   // Save/Suspend Expansion
     #include "Necessary/ExpandedModularSave/ExModularSave.event"
+  
+// Stuff
+ALIGN 4
+  #include "ExternalHacks/Stuff/Stuff.event"
 
