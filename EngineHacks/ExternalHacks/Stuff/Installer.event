@@ -1,0 +1,17 @@
+
+// Thanks to Mokha for the updated fe-clib! 
+ALIGN 4 
+CritFlag_Link: 
+#ifndef CritFlag 
+#define CritFlag 0x65 
+#endif 
+WORD CritFlag 
+ALIGN 4
+HitFlag_Link: 
+#ifndef HitFlag 
+#define HitFlag 0x65 
+#endif 
+WORD HitFlag 
+
+#include "C_Code.lyn.event" 
+
