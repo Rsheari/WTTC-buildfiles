@@ -12,6 +12,7 @@ HitFlag_Link:
 #define HitFlag 0x65 
 #endif 
 WORD HitFlag 
-
+ALIGN 4
+#include "WTEditor.event" 
 #include "C_Code.lyn.event" 
 

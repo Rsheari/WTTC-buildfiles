@@ -1,8 +1,6 @@
 #include "C_Code.h"
-//1/3, remove hit from wta, it already rigged to 100, why bother
-void ComputeBattleUnitHitRate(struct BattleUnit* bu) {
-   bu->battleHitRate = (bu->unit.skl * 2) + GetItemHit(bu->weapon) + (bu->unit.lck / 2);
- }
+//1/3, remove hit from wta, it already rigged to 100, why bother, so moved to stuff mk2
+
 //2/3 add AS to WTA, repurposing wtrianglehitbonus
 void ComputeBattleUnitSpeed(struct BattleUnit* bu)  {
     int effWt = GetItemWeight(bu->weaponBefore);

@@ -256,6 +256,12 @@ ALIGN 4
     #include "Necessary/ExpandedModularSave/ExModularSave.event"
   
 // Stuff
-
+ALIGN 4
   #include "ExternalHacks/Stuff/Installer.event"
+  // Should be on Calcloop evebt 
+  ALIGN 4
+  #include "Necessary/CalcLoops/AnotherCalcLoop/Installer.event"
 
+// Debug
+ALIGN 4
+#include "ExternalHacks/Debugger/Installer.event"

@@ -14,14 +14,14 @@ void ComputeBattleUnitAvoidRate(struct BattleUnit * bu)
 
      
 }
+// 100 hir
+void ComputeBattleUnitHitRate(struct BattleUnit* bu) {
+  
+ if (CheckFlag(HitFlag_Link)) {bu->battleHitRate = 100;}
+ else
+ {bu->battleHitRate = (bu->unit.skl * 2) + GetItemHit(bu->weapon) + (bu->unit.lck / 2);}
+ }
 
-// 100 hit,
-void ComputeBattleUnitEffectiveHitRate(struct BattleUnit* attacker, struct BattleUnit* defender) {
-   if  (CheckFlag(HitFlag_Link)) {attacker->battleEffectiveHitRate = attacker->battleHitRate - defender->battleAvoidRate;}
-   else
-  { attacker->battleEffectiveHitRate = 100;}
-
-}
 // 0 crit dodge
 
 void ComputeBattleUnitDodgeRate(struct BattleUnit* bu) {
